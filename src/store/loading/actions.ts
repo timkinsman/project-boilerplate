@@ -1,13 +1,13 @@
 import { Constants } from './types'
 import { action } from 'typesafe-actions'
 
-export const addLoadingIdAction = (id: string) => {
+export const addLoadingId = (id: string) => {
   return action(Constants.ADD_LOADING_ID, {
     id,
   })
 }
 
-export const removeLoadingIdAction = (id: string) => {
+export const removeLoadingId = (id: string) => {
   return action(Constants.REMOVE_LOADING_ID, {
     id,
   })

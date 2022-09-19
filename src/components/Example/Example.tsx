@@ -4,14 +4,14 @@ import { connect } from 'react-redux'
 import { ExampleProps } from './Example.types'
 import { LoadingActions } from '../../store/loading/types'
 import { RootState } from '../../store'
-import { addLoadingIdAction } from '../../store/loading/actions'
+import { addLoadingId } from '../../store/loading/actions'
 import { devLog } from '../../utils/helpers'
 
 type ReduxProps = ReturnType<typeof mapStateToProps> & ReturnType<typeof mapDispatchToProps>
 
-const Example = ({ addLoading, loadingIds, msg }: ExampleProps & ReduxProps) => {
+const Example = ({ addLoadingId, loadingIds, msg }: ExampleProps & ReduxProps) => {
   useEffect(() => {
-    addLoading('Example')
+    addLoadingId('Example')
   }, [])
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const mapStateToProps = ({ loadingIds }: RootState) => {
 const mapDispatchToProps = (dispatch: Dispatch<LoadingActions>) =>
   bindActionCreators(
     {
-      addLoading: addLoadingIdAction,
+      addLoadingId,
     },
     dispatch,
   )
