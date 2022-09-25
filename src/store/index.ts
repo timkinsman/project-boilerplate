@@ -1,16 +1,14 @@
-import { composeWithDevTools } from 'redux-devtools-extension'
-import { combineReducers, createStore } from 'redux'
-import { LoadingState } from './loading/types'
-import { loadingReducer } from './loading/reducer'
+import { configureStore } from '@reduxjs/toolkit';
+import loadingReducer from './loading';
 
-export type RootState = {
-  loadingIds: LoadingState
-}
+const store = configureStore({
+  reducer: {
+    loading: loadingReducer,
+  },
+});
 
-const store = createStore<RootState, any, any, any>(
-  combineReducers({
-    loadingIds: loadingReducer,
-  }),
-  composeWithDevTools(),
-)
-export default store
+// Infer the `RootState` and `AppDispatch` types from the store itself
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export default store;

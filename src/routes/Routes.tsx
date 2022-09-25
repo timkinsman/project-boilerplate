@@ -1,11 +1,10 @@
-import React from 'react'
-import Example from '../components/Example/Example'
+import { Home } from '../views/Home/Home';
 
 const routes = [
   {
     path: '/',
-    main: () => <Example msg='Hello!' />,
+    main: () => <Home />,
   },
-]
+];
 
-export default routes
+export default routes;
