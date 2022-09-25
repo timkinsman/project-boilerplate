@@ -1,5 +1,5 @@
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import { NotFound } from '../views/NotFound/NotFound';
+import { NotFound } from '../views/NotFound';
 import routes from './Routes';
 
 const SwitchRoutes = () => (
