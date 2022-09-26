@@ -6,3 +6,7 @@ export const COLORS = {
   WARNING_ORANGE: '#f0541e',
   WHITE: '#FFFFFF',
 };
+
+const theme = {};
+
+export default theme;

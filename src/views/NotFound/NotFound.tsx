@@ -1,9 +1,10 @@
+import { Box } from 'petald';
 import { Example } from '../../components/Example';
 
 export const NotFound = () => {
   return (
-    <div>
+    <Box>
       <Example msg='Not Found!' />
-    </div>
+    </Box>
   );
 };
