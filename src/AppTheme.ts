@@ -5,4 +5,4 @@ export const COLORS = {
   SUCCESS_GREEN: '#009944',
   WARNING_ORANGE: '#f0541e',
   WHITE: '#FFFFFF',
-}
+};

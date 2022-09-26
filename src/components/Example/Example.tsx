@@ -1,20 +1,20 @@
-import { useEffect } from 'react'
-import { ExampleProps } from './Example.types'
-import { devLog } from '../../utils/helpers'
-import { useAppDispatch, useAppSelector } from '../../utils/hooks'
-import { addLoadingId } from '../../store/loading'
+import { useEffect } from 'react';
+import { addLoadingId } from '../../store/loading';
+import { devLog } from '../../utils/helpers';
+import { useAppDispatch, useAppSelector } from '../../utils/hooks';
+import { ExampleProps } from './Example.types';
 
 export const Example = ({ msg }: ExampleProps) => {
-  const dispatch = useAppDispatch()
-  const loading = useAppSelector(state => state.loading)
+  const dispatch = useAppDispatch();
+  const loading = useAppSelector((state) => state.loading);
 
   useEffect(() => {
-    dispatch(addLoadingId('Example'))
-  }, [])
+    dispatch(addLoadingId('Example'));
+  }, []);
 
   useEffect(() => {
-    devLog('success', 'Example', loading.ids.join(', '))
-  }, [loading.ids])
+    devLog('success', 'Example', loading.ids.join(', '));
+  }, [loading.ids]);
 
-  return <div>{msg}</div>
-}
+  return <div>{msg}</div>;
+};
